@@ -27,6 +27,7 @@ describe("LightHouseWDIO", () => {
       console.log("runLighthouse import");
       // const lighthouse = (await import("lighthouse/core/index.cjs"));
       // log("runLighthouse lighthouse imported");
+      // const { startFlow } = await import("lighthouse");
       const { startFlow } = await import("lighthouse/core");
       console.log("runLighthouse startFlow imported");
       const flow: UserFlow = await startFlow(page as unknown as Puppeteer.Page, { config, name: pageTags.url });
