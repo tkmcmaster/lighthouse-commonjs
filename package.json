@@ -1,0 +1,46 @@
+{
+  "name": "lighthouse-commonjs",
+  "version": "0.1.1",
+  "description": "Bug Repo for CommonJS await import lighthouse",
+  "main": "build/src/index.js",
+  "types": "build/src/index.d.ts",
+  "files": [
+    "build/src/**/*",
+    "build/types/**/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tkmcmaster/lighthouse-commonjs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tkmcmaster/lighthouse-commonjs/issues"
+  },
+  "homepage": "https://github.com/tkmcmaster/lighthouse-commonjs#readme",
+  "engines": {
+    "node": ">=16.0.0 <19.0.0"
+  },
+  "scripts": {
+    "build": "npm run buildonly",
+    "buildonly": "tsc --build",
+    "prepare": "npm run buildonly",
+    "test": "npm run buildonly && wdio wdio.conf.ts ./node_modules/.bin/",
+    "wdio": "wdio wdio.conf.ts ./node_modules/.bin/",
+    "clean": "rimraf build/"
+  },
+  "devDependencies": {
+    "@wdio/cli": "^8.10.0",
+    "@wdio/local-runner": "^8.10.0",
+    "@wdio/mocha-framework": "^8.10.0",
+    "@wdio/spec-reporter": "^8.10.0",
+    "@wdio/types": "^8.10.0",
+    "chromedriver": "^112.0.1",
+    "expect-webdriverio": "^4.2.2",
+    "lighthouse": "^10.1.1",
+    "mocha": "^10.2.0",
+    "rimraf": "^5.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4",
+    "wdio-chromedriver-service": "^8.1.1",
+    "webdriverio": "^8.10.0"
+  }
+}
